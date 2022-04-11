@@ -62,25 +62,25 @@ public class DVDLibraryController {
                     findAllLastNYears();
                     break;
                 case 10:
-                    removeDVD();
+                    findAllByRating();
                     break;
                 case 11:
-                    editDVD();
+                    findAllByDirector();
                     break;
                 case 12:
-                    showAllDVDs();
+                    findAllByStudio();
                     break;
                 case 13:
-                    displayDVDInfo();
+                    findAverageAge();
                     break;
                 case 14:
-                    searchDVD();
+                    findNewest();
                     break;
                 case 15:
-                    saveToFile();
+                    findOldest();
                     break;
                 case 16:
-                    loadFromFile();
+                    findAverageNumberNotes();
                     break;
                 case 0:
                     exit();
@@ -101,9 +101,40 @@ public class DVDLibraryController {
         System.out.println("find all movies released last N years");
     }
     
+    //find all by rating
+    private void findAllByRating() {
+        System.out.println("find all movies by MPAA rating");
+    }
     
+    //find all by director
+    private void findAllByDirector() {
+        System.out.println("find all movies by director");
+    }
     
+    //find all by studio
+    private void findAllByStudio() {
+        System.out.println("find all movies by studio");
+    }
     
+    //find average age
+    private void findAverageAge() {
+        System.out.println("Find average age of DVDs");
+    }
+    
+    //find newest DVD
+    private void findNewest() {
+        System.out.println("find newest DVD");
+    }
+    
+    //find oldest DVD
+    private void findOldest() {
+        System.out.println("find oldest DVD");
+    }
+    
+    //find average number notes
+    private void findAverageNumberNotes() {
+        System.out.println("find average number notes");
+    }
     
     
     //old methods from part 1 (cases 0-8)
