@@ -47,7 +47,7 @@ public class DVDLibraryDaoFI implements DVDLibraryDao {
         return list;
     }
 
-    public void moviesReleasedNYears(int n) {
+    public List<DVD> moviesReleasedNYears(int n) {
         int year = LocalDate.now().getYear() - n;
 
         List<DVD> list = listAllDVDs();
@@ -55,6 +55,8 @@ public class DVDLibraryDaoFI implements DVDLibraryDao {
         List<DVD> withinYear = list.stream()
                 .filter((DVD) -> DVD.getYear() >= year)
                 .collect(Collectors.toList());
+
+        return withinYear;
     }
 
     @Override
