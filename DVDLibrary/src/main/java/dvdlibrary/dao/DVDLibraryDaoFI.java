@@ -6,16 +6,14 @@ package dvdlibrary.dao;
  */
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
+import java.util.*;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
 import java.io.IOException;
-import java.util.List;
 
 import dvdlibrary.dto.DVD;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class DVDLibraryDaoFI implements DVDLibraryDao {
 
@@ -49,12 +47,15 @@ public class DVDLibraryDaoFI implements DVDLibraryDao {
         return list;
     }
 
-//    public void moviesReleasedNYears(int n) {
-//        int year = LocalDate.now().getYear() - n;
-//
-//        List<DVD> withinYear = hmap.stream()
-//                .filter((d) -> d.getReleaseDate(d).toYear() >= year));
-//    }
+    public void moviesReleasedNYears(int n) {
+        int year = LocalDate.now().getYear() - n;
+
+        List<DVD> list = listAllDVDs();
+
+        List<DVD> withinYear = list.stream()
+                .filter((DVD) -> DVD.getYear() >= year)
+                .collect(Collectors.toList());
+    }
 
     @Override
     public void displayDVD(DVD dvd) {

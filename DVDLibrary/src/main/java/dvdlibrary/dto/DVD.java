@@ -91,6 +91,10 @@ public class DVD {
         this.directorName = name;
     }
 
+    public int getYear() {
+        return releaseDate.getYear();
+    }
+
     //Studio getter
     public String getStudio() {
         return this.studio;
