@@ -223,5 +223,20 @@ public class DVDLibraryView {
     public void displayWriteConfirm(int numDVD){
         io.print("Saved " + numDVD + " DVDs");
     }
-    
+    public String getDVDbyYear() {
+        return io.readString("Please enter the date released in the last N years  :");
+        
+    }
+    public String getDVDyDirectorName() {
+        return io.readString("Please enter the  DVD director Name :");    
+    }
+public String getDVDbyStudio() {
+        return io.readString("Please enter the DVD Studio Name :");    
+    }
+public String getDVDbyRating() {
+        return io.readString("Please enter the DVD Rating :");    
+    }
+public String getDVDbyUserNote() {
+        return io.readString("Please enter theDVD User Note :");    
+    }
 }
