@@ -34,9 +34,17 @@ public class DVDLibraryView {
         io.print("6. Search for DVD");
         io.print("7. Save Collection");
         io.print("8. Load Collection");
+        io.print("9.DVD released in the last N years");
+        io.print("10.DVD with a given MPAA rating");
+        io.print("11.DVD by a given director");
+        io.print("12.DVD released by a particular studio");
+        io.print("13.Average age of the DVD in the collection");
+        io.print("14.Newest DVD in your collection");
+        io.print("15.Oldest movie in your collection");
+        io.print("16.Average number of notes associated with DVD in your collection");
         io.print("0. Exit");
 
-        return io.readInt("Please select from the above choices.", 0, 8);
+        return io.readInt("Please select from the above choices.", 0, 16);
     }
 
     //allow user to add a DVD 
