@@ -112,8 +112,8 @@ public class DVDLibraryView {
         io.print("Please type out changes as prompted");
         io.print("To leave a field the same, press Enter without typing anything"); //leaving a field empty will copy over the previous DVD field for that section
         DVD curr = getNewDVDInfo();
-        if(curr.getReleaseDate().equals("")){
-            curr.setReleaseDate(previous.getReleaseDate());
+        if(curr.getReleaseDateStr().equals("")){
+            curr.setReleaseDate(previous.getReleaseDateStr());
         }
         if(curr.getDirector().equals("")){
             curr.setDirector(previous.getDirector());
@@ -134,7 +134,7 @@ public class DVDLibraryView {
     public void listProperties(DVD current){
         String DVDInfo = String.format("[Title]%s [Release Date]%s [Rating]%s [Director]%s [Studio]%s [Notes]%s ",
             current.getTitle(),
-            current.getReleaseDate(),
+            current.getReleaseDateStr(),
             current.getRatingString(),
             current.getDirector(),
             current.getStudio(),
@@ -158,7 +158,7 @@ public class DVDLibraryView {
         for(DVD currDVD : DVDList){
             String DVDInfo = String.format("[Title]%s [Release Date]%s [Rating]%s [Director]%s [Studio]%s [Notes]%s ",
                 currDVD.getTitle(),
-                currDVD.getReleaseDate(),
+                currDVD.getReleaseDateStr(),
                 currDVD.getRatingString(),
                 currDVD.getDirector(),
                 currDVD.getStudio(),

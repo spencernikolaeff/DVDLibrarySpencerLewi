@@ -67,7 +67,12 @@ public class DVD {
     }
 
     //releaseDate getter
-    public String getReleaseDate() {
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+
+    //releaseDate getter
+    public String getReleaseDateStr() {
         return releaseDate.format(dtfOut);
     }
 

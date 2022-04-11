@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class DVDLibraryDaoFI implements DVDLibraryDao {
 
     HashMap<String, DVD> hmap = new HashMap<String, DVD>();
-    private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+    private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @Override
     public void addDVD(DVD dvd) {
@@ -48,6 +48,13 @@ public class DVDLibraryDaoFI implements DVDLibraryDao {
         }
         return list;
     }
+
+//    public void moviesReleasedNYears(int n) {
+//        int year = LocalDate.now().getYear() - n;
+//
+//        List<DVD> withinYear = hmap.stream()
+//                .filter((d) -> d.getReleaseDate(d).toYear() >= year));
+//    }
 
     @Override
     public void displayDVD(DVD dvd) {
