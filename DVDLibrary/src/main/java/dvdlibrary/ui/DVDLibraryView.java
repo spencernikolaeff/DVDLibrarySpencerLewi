@@ -5,6 +5,9 @@
 package dvdlibrary.ui;
 
 import dvdlibrary.dto.DVD;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -14,6 +17,7 @@ import java.util.List;
 public class DVDLibraryView {
     
     final private UserIO io;
+    private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
     
     public DVDLibraryView(UserIO io) {
         this.io = io;
@@ -44,7 +48,7 @@ public class DVDLibraryView {
     //
     public DVD getNewDVDInfo() {
         String title = io.readString("Please enter DVD title");
-        String date = io.readString("Please enter DVD release date (MM-DD-YYYY)"); //replace date with time?
+        LocalDate date = LocalDate.parse(io.readString("Please enter DVD release date (MM-DD-YYYY)"), dtf); //replace date with time?
         String rating = io.readString("Please enter DVD MPAA rating");
         String director = io.readString("Please enter DVD director name");
         String studio = io.readString("Please enter DVD studio name");

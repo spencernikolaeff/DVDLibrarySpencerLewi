@@ -4,6 +4,9 @@
  */
 package dvdlibrary.dto;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author 17202
@@ -18,11 +21,14 @@ public class DVD {
     //data fields attributes
     //added final keyword for title to make sure we don't get repeat DVDs
     private final String title;
-    private String releaseDate;
+    private LocalDate releaseDate;
     private MPAA rating;
     private String directorName;
     private String studio;
     private String userNote;
+
+    private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+    private final DateTimeFormatter dtfOut = DateTimeFormatter.ofPattern("dd LLLL yyyy");
 
     //constructors
     public DVD(String title) {
@@ -36,14 +42,14 @@ public class DVD {
     }
     //constructor for simple DVD implementation with just title
 
-    //to sstring method for DVD object 
+    //to string method for DVD object
     @Override
     public String toString() {//overriding the toString() method  
-        return "Tilte = " + title + " Release Date = " + releaseDate + " Rating = " + rating + " Director Name = " + directorName + " Status = " + studio + " UserNote = " + userNote;
+        return "Title = " + title + " Release Date = " + releaseDate + " Rating = " + rating + " Director Name = " + directorName + " Status = " + studio + " UserNote = " + userNote;
     }
 
     //constructor for full DVD implementation with all fields
-    public DVD(String title, String releaseDate, String rating, String directorName, String studio, String userNote) {
+    public DVD(String title, LocalDate releaseDate, String rating, String directorName, String studio, String userNote) {
         //set all fields from input except rating
         this.title = title;
         this.releaseDate = releaseDate;
@@ -62,12 +68,12 @@ public class DVD {
 
     //releaseDate getter
     public String getReleaseDate() {
-        return this.releaseDate;
+        return releaseDate.format(dtfOut);
     }
 
     //releaseDate setter
     public void setReleaseDate(String newdate) {
-        this.releaseDate = newdate;
+        this.releaseDate = LocalDate.parse(newdate, dtf);
     }
 
     //directorName getter

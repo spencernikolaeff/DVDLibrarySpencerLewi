@@ -4,6 +4,8 @@ package dvdlibrary.dao;
  *
  * @author 17202
  */
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 public class DVDLibraryDaoFI implements DVDLibraryDao {
 
     HashMap<String, DVD> hmap = new HashMap<String, DVD>();
+    private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 
     @Override
     public void addDVD(DVD dvd) {
@@ -69,7 +72,7 @@ public class DVDLibraryDaoFI implements DVDLibraryDao {
                 String data = myReader.nextLine();
                 String[] dvdField = data.split("::");
 
-                DVD tmp = new DVD(dvdField[0], dvdField[1], dvdField[2], dvdField[3], dvdField[4], dvdField[5]);
+                DVD tmp = new DVD(dvdField[0], LocalDate.parse(dvdField[1], dtf), dvdField[2], dvdField[3], dvdField[4], dvdField[5]);
                 loaded.put(tmp.getTitle(), tmp);
                 numberOfRecords++;
             }
