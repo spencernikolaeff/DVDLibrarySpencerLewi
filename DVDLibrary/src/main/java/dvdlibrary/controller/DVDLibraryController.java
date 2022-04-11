@@ -58,6 +58,30 @@ public class DVDLibraryController {
                 case 8:
                     loadFromFile();
                     break;
+                case 9:
+                    findAllLastNYears();
+                    break;
+                case 10:
+                    removeDVD();
+                    break;
+                case 11:
+                    editDVD();
+                    break;
+                case 12:
+                    showAllDVDs();
+                    break;
+                case 13:
+                    displayDVDInfo();
+                    break;
+                case 14:
+                    searchDVD();
+                    break;
+                case 15:
+                    saveToFile();
+                    break;
+                case 16:
+                    loadFromFile();
+                    break;
                 case 0:
                     exit();
                     break;
@@ -69,6 +93,20 @@ public class DVDLibraryController {
             System.out.println();
         }
     }
+    
+    //new methods part 2 (cases 9-16)
+    
+    //find all movies released last N years
+    private void findAllLastNYears() {
+        System.out.println("find all movies released last N years");
+    }
+    
+    
+    
+    
+    
+    
+    //old methods from part 1 (cases 0-8)
 
     /*
         These methods call operations from the view to get user requests, and
